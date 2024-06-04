@@ -44,6 +44,10 @@ h3{
     font-weight: 400;
 }
 
+.risultato-script span{
+    font-size: 15px;
+}
+
 .risultato{
     padding: 20px;
     border-radius: 50px;
