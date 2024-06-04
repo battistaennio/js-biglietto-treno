@@ -7,8 +7,12 @@ va applicato uno sconto del 40% per gli over 65.*/
 
 
 //chiedo età
+let userAge = parseInt(prompt("Inserisci la tua età"));
+console.log("età: ", userAge);
 
 //chiedo numero chilometri da percorrere
+let userKM = parseInt(prompt("Inserisci i km da percorrere"));
+console.log("km: ", userKM);
 
 //creo valore km * 0.21 standard
 
