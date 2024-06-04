@@ -4,7 +4,7 @@ il prezzo del biglietto è definito in base ai km (0.21 € al km)
 va applicato uno sconto del 20% per i minorenni
 va applicato uno sconto del 40% per gli over 65.*/
 
-
+let risultato;
 
 //chiedo età
 let userAge = parseInt(prompt("Inserisci la tua età"));
@@ -14,21 +14,21 @@ console.log("età: ", userAge);
 let userKM = parseInt(prompt("Inserisci i km da percorrere"));
 console.log("km: ", userKM);
 
-//creo valore km * 0.21 standard
-
-//creo valore per età utente minorenne (numeri <= 17)
-
-//creo valore per età utente over 65 (numeri >= 65)
-
-//creo valore per età utente normale (numeri fra 18 e 64) 
-
-//se età è utente normale moltiplico per valore km standard
-
-	//altrimenti età minorenne moltiplico per valore standard e tolgo il 20%
-
-	//altimenti età over 65 moltiplico per valore standard e tolgo il 40%
+//moltiplico userKM a 0.21
+const prezzoKM = userKM * 0.21;
+console.log("€: ", prezzoKM);
 
 
-//approssimo il risultato alla seconda cifra decimale se necessario
+//se età è utente è <= a 17 sottraggo prezzoKM al 20%
+if (userAge <= 17) {  
+    risultato = prezzoKM - (prezzoKM * 0.2);
+} else if (userAge >= 65) {  	//altrimenti se età è utente è >= a 65 sottraggo prezzoKM al 40%
+    risultato = prezzoKM - (prezzoKM * 0.4);  
+} else {   //altimenti il risultato è uguale al prezzo al km
+    risultato = prezzoKM;
+}
+
+//approssimo il risultato alla seconda cifra decimale
+console.log("prezzo finale: ", risultato.toFixed(2));
 
 //comunico prezzo finale
